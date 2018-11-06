@@ -1,0 +1,91 @@
+.reviews {
+    min-height: 100vh;
+    position: relative; 
+}
+
+.reviews-list__item-icon {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.reviews-list {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100vh;
+}
+
+.reviews-list__item {
+    width: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 326px;
+    padding: 50px 25px;
+    filter: grayscale(100%);
+}
+
+.reviews-list__item:nth-child(1){
+    background-image: url(../images/reviews/photo1.png);
+}
+
+.reviews-list__item:nth-child(2){
+    background-image: url(../images/reviews/photo2.png);
+}
+
+.reviews-list__item:nth-child(3){
+    background-image: url(../images/reviews/photo3.png);
+}
+
+.reviews-list__item:nth-child(4){
+    background-image: url(../images/reviews/photo4.png);
+}
+
+.reviews-list__item:nth-child(5){
+    background-image: url(../images/reviews/photo5.png);
+}
+
+.reviews-list__item:nth-child(6){
+    background-image: url(../images/reviews/photo6.png);
+}
+
+.reviews-list__item:nth-child(7){
+    background-image: url(../images/reviews/photo7.png);
+}
+
+.reviews-list__item:nth-child(8){
+    background-image: url(../images/reviews/photo8.png);
+}
+
+.reviews-list__item-title{
+    font-family: 'Gagalin_regular'; 
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.reviews-list__item-desc {
+    font-family: 'Ubuntu_light';
+    color: #ffffff;
+    line-height: 24px;
+    margin-bottom: 18px;
+}
+
+.reviews-list__item-btn {
+    
+    width: 112px;
+}
+
+.reviews-list__item-link {
+    display: block;
+    font-family: 'Ubuntu_medium';
+    font-size: 13px;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 15px;
+    background-color: $black;
+    @include border-radius(5px);
+
+    &:hover {
+        background-color: $dark-black;
+    }
+}

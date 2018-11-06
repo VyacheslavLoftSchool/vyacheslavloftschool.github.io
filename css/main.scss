@@ -1,0 +1,28 @@
+
+
+// adjustment variables
+$container-width    : 960px;
+
+
+//colors
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$grey: #6c6b6b;
+$dark-black: #1f2122;
+
+
+
+// layout
+@import "_misc/adjustment";
+@import "_misc/normalize";
+@import "_misc/mixins";
+@import "_misc/fonts";
+
+// styles
+@import "sections/about";
+@import "sections/advantages";
+@import "sections/reviews";
+
+
+
