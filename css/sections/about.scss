@@ -1,21 +1,26 @@
 
 .about {
-    background: url(../images/bg/bg-about.png) no-repeat;
+    background-image: url(../images/bg/bg-about.png);
+    background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     position: relative; 
+    min-height: rem(650px);
 }
 .container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .header {
     display: flex;
     justify-content: space-between;
-    padding-top: 12px;
+    padding-top: rem(12px);
 
     .logo {
-        width: (100px*100%)/$container-width;
-        
+        // width: (100px*100%)/$container-width;
+        width: rem(100px);
         &__icon {
             display: block;
             max-width: 100%;
@@ -24,7 +29,7 @@
     }
     &__right {
         display: flex;
-        width: (780px*100%)/$container-width;
+        // width: (780px*100%)/$container-width;
         justify-content: space-between;
         align-items: center;
         
@@ -33,59 +38,92 @@
 
 .menu-list {
     display: flex;
-    width: (670px*100%)/780px;
-    justify-content: space-between;
+    // width: (670px*100%)/780px;
+    // justify-content: space-between;
+    margin-right: rem(10px);
 
+    @include tablets {
+        display: none;
+    }
 }
 
 .menu-list__item-link {
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: rem(13px);
     font-family: 'Ubuntu_medium';
 
+    
+}
+
+.menu-list__item:last-child:after {
+    display: none;
+
+}
+
+.menu-list__item {
     &:after {
         content: "•";
-        margin-left: 16px;
+        margin: 0 rem(14px);
+        color: #fff;
     }
 }
 
 .order-btn {
-    padding: 15px;
+    padding: rem(10px) rem(14px);
     text-decoration: none;
     background-color: $orange;
     color: #ffffff;
-    font-size: 13px;
+    font-size: rem(13px);
     font-family: 'Ubuntu_medium';
     text-transform: uppercase;
-    @include border-radius(5px);
+    @include border-radius(rem(5px));
+}
+
+.humburger-link-icon {
+    width: rem(26px);
+    height: rem(26px);
+    background-repeat: no-repeat;
+    background-position: center;
+    // position: absolute;
+    // right: rem(-35px);
+    margin-left: rem(24px);
+    display: none;
+
+    @include tablets {
+        display: flex;
+    }
 }
 
 .pagination {
-    position: absolute;
-    left: 102%;
-    top: 90px;
+    position: fixed;
+    right: 5%;
+    top: 10%;
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .pagination-list__item {
     
-    width: 6px;
-    height: 6px;
+    width: rem(6px);
+    height: rem(6px);
     background-color: #ffffff;
     @include border-radius(50%);
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
     position: relative;
 
     &.active:after {
     content: "";
     position: absolute;
-    top: -6px;
-    left: -6px;
+    top: rem(-6px);
+    left: rem(-6px);
     display: block;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #ffffff;
+    width: rem(16px);
+    height: rem(16px);
+    border: rem(1px) solid #ffffff;
     @include border-radius(50%);
     }
 }
@@ -94,39 +132,60 @@
 .content-wrap {
     display: flex;
     align-items: center;
-    margin-bottom: 95px;
+    // margin-bottom: rem(95px);
+    margin: auto;
+
+    @include tablets {
+        flex-direction: column;
+        padding: 0 20%;
+        text-align: center;
+        justify-content: center;
+    }
     
 }
 
 .about__pic {
-   width: (480px*100%)/$container-width;
+//    width: (480px*100%)/$container-width;
+    width: 50%;
    text-align: center;
+    @include tablets {
+        width: 100%;
+    }
    //flex: 1;
 }
 
 .about__pic-elem {
-    /*display: block;
+    // display: block;
     max-width: 100%;
-    max-height: 100%;*/
+    max-height: 100%;
 }
 
 .about__desc {
-    flex: 1;
-    
+    // flex: 1;
+    width: 50%;
     &-text1 {
         font-family: 'Gagalin_regular'; 
-        font-size: 72px;
+        font-size: rem(72px);
         text-transform: uppercase;
         color: $yellow;
+
+        @include tablets {
+            font-size: rem(63px);
+        }
     }
 
     &-text2 {
         font-family: 'Lifehack_medium';
-        font-size: 72px;
-        line-height: 65px;
+        font-size: rem(72px);
+        line-height: rem(65px);
         color: #ffffff;
+        @include tablets {
+            font-size: rem(54px);
+        }
     }
-    
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .arrow {
@@ -135,4 +194,5 @@
     // left: 50%;
     // margin-left: -10px;
     text-align: center;
+    margin-bottom: rem(40px);
 }

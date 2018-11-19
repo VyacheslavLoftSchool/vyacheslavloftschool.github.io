@@ -1,5 +1,5 @@
 .reviews {
-    min-height: 100vh;
+    height: 100vh;
     position: relative; 
 }
 
@@ -12,16 +12,36 @@
 .reviews-list {
     display: flex;
     flex-flow: row wrap;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    // height: 100vh;
 }
 
 .reviews-list__item {
     width: 25%;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 326px;
-    padding: 50px 25px;
+    // min-height: rem(326px);
+    height: 50%;
     filter: grayscale(100%);
+
+    @include tablets {
+        width: 50%;
+        height: 25%;
+    }
+}
+
+.reviews_hover {
+    padding: rem(50px) rem(25px);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.reviews_hover:hover {
+    opacity: 1;
 }
 
 .reviews-list__item:nth-child(1){
@@ -59,31 +79,43 @@
 .reviews-list__item-title{
     font-family: 'Gagalin_regular'; 
     color: #ffffff;
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
+
+    @include phones {
+        text-align: center;
+    }
 }
 
 .reviews-list__item-desc {
     font-family: 'Ubuntu_light';
     color: #ffffff;
-    line-height: 24px;
-    margin-bottom: 18px;
+    line-height: rem(24px);
+    margin-bottom: rem(18px);
+
+    @include phones {
+        display: none;
+    }
 }
 
 .reviews-list__item-btn {
     
-    width: 112px;
+    width: rem(112px);
+
+    @include phones {
+        margin: auto;
+    }
 }
 
 .reviews-list__item-link {
     display: block;
     font-family: 'Ubuntu_medium';
-    font-size: 13px;
+    font-size: rem(13px);
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
-    padding: 15px;
+    padding: rem(15px);
     background-color: $black;
-    @include border-radius(5px);
+    @include border-radius(rem(5px));
 
     &:hover {
         background-color: $dark-black;

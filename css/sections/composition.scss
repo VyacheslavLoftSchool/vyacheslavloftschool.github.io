@@ -1,0 +1,239 @@
+.composition {
+    @extend .about;
+    background: #f9b43b; /* Old browsers */
+    background: -moz-linear-gradient(top, #f9b43b 0%, #eb8d38 70%, #f9b43b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f9b43b 0%,#eb8d38 70%,#f9b43b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f9b43b 0%,#eb8d38 70%,#f9b43b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b43b', endColorstr='#f9b43b',GradientType=0 ); /* IE6-9 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.composition-wrap {
+    display: flex;
+
+   
+    
+}
+
+.slider-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include tablets {
+        flex-direction: column;
+    }
+    
+}
+
+.slider-item__left {
+    width: 50%;
+
+    @include tablets {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.slider-item__right {
+    width: 50%;
+    margin-left: rem(20px);
+
+    @include tablets {
+        width: 85%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.title_color-white {
+    color: #ffffff;
+}
+
+.slider-item__title {
+    line-height: rem(63.93px);
+    text-align: left;
+
+    @include tablets {
+        font-size: 71.88px;
+        text-align: center;
+    }
+}
+
+.slider-item__desc {
+    color: #ffffff;
+    font-family: 'Ubuntu_light';
+    line-height: rem(23.96px);
+    @include tablets {
+        text-align: center;
+        margin-bottom: rem(50px);
+    }
+    
+}
+
+.slider-item__cost {
+    display: flex;
+    align-items: flex-end;
+}
+
+.price {
+    color:$orange;
+    margin-bottom: rem(-8px);
+}
+
+.currency {
+    font-size: rem(29.96px);
+    margin-right: rem(28px);
+}
+
+.burger {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+// .left-arrow, .right-arrow {
+//     display: flex;
+//     // align-items: center; 
+//     width: 5%;
+// }
+.container_slider {
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    @include tablets {
+        width: 85%
+    }
+}
+
+.left-arrow__icon-field, .right-arrow__icon-field {
+    width: 10%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+}
+
+.left-arrow__icon-field {
+    left: -4rem;
+}
+
+.right-arrow__icon-field {
+    right: -4rem;
+}
+
+
+
+.left-arrow__icon, .right-arrow__icon {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    transform: rotate(90deg);
+    object-fit: contain;
+}
+
+.right-arrow__icon {
+    transform: rotate(-90deg);
+}
+
+.composition-icon_burger {
+    width: rem(90px);
+    height: rem(90px);
+    background-color: $orange;
+    position: absolute;
+    @include border-radius(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // opacity: 0.5;
+    top: rem(-30px);
+    left: 0;
+    @include tablets {
+        top: 0;
+    }
+}
+
+.composition-icon_burger:hover > .products{
+    // opacity: 1;
+    visibility: visible;
+}
+
+.composition-icon_text {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Gagalin_regular';
+    font-size: rem(14px);
+    margin-top: rem(5px);
+    color: #ffffff;
+}
+
+.composition-icon_kkal {
+    width: rem(60px);
+    height: rem(80px);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    opacity: 0.4;
+    @include tablets {
+        top: 0;
+        left: 85%;
+    }
+}
+
+.composition-icon_kkal-number {
+    font-family: 'Gagalin_regular';
+    font-size: rem(20px);
+    color: #ffffff;
+    position: absolute;
+    top: 25%;
+    left: 23%;
+}
+
+.products {
+    position: absolute;
+    width: rem(270px);
+    background-color: #ffffff;
+    opacity: 0.8;
+    padding: rem(20px);
+    @include border-radius(5px);
+    top: 0;
+    left: 100%;
+    visibility: hidden;
+}
+
+.products-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(11px);
+}
+
+.products-list__item:last-child {
+    margin-bottom: 0;
+}
+
+.products-list__item-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.products-list__item-text {
+    margin-left: rem(20px);
+    font-family: 'Ubuntu_medium';
+}
+
+.products-list__item-weight {
+    font-family: 'Ubuntu_light';
+    color: $black;
+}

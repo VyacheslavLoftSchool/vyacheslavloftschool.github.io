@@ -1,0 +1,78 @@
+.menu {
+    @extend .about;
+    background-image: url(../images/bg/bg-menu.png);
+    height: 100vh;
+}
+
+.menu-title {
+    text-transform: uppercase;
+    font-family: 'Gagalin_regular'; 
+    font-size: rem(72px);
+    color: #ffffff;
+    position: absolute;
+    top: rem(110px);
+    left: rem(90px);
+}
+
+.menu-acc {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.menu-acc__item{
+    display: flex;
+    height: 100vh;
+    
+}
+
+.menu-acc__item.active .menu-acc__item-text {
+    width: rem(540px);
+    @include phones {
+        width: 100%;
+    }
+}
+
+
+
+.menu-acc__item-link {
+    width: rem(80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.menu-acc__item-link-title {
+    text-transform: uppercase;
+    font-family: 'Gagalin_regular'; 
+    font-size: rem(40px);
+    
+}
+
+.menu-acc__item-text {
+    width: 0;
+    box-sizing: border-box;
+    background-color: $soft-grey;
+    line-height: rem(24px);
+    color: #ffffff;
+    font-family: 'Ubuntu_medium';
+}
+
+.menu-acc__item-box {
+    margin: rem(60px) rem(33px);
+}
+
+.menu-acc__item-link-title {
+    transform: rotate(-90deg);
+}
+.menu-acc__item.active > .menu-acc__item-link {
+    color: $yellow;
+}

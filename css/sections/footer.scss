@@ -1,0 +1,50 @@
+footer {
+    background-color: #141414;
+    color: #ffffff;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    min-height: rem(60px);
+    line-height: rem(24px);
+    align-items: center;
+
+    @include phones {
+        flex-direction: column;
+        text-align: center;
+        min-height: rem(117px);
+        justify-content: space-around;
+    }
+}
+
+.footer-left {
+    width: rem(300px);
+
+    // @include phones {
+    //     margin-bottom: 17px;
+    // }
+    
+}
+
+.footer-right {
+    width: rem(140px);
+    
+
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.socials-item {
+    width: rem(20px);
+    
+}
+
+.tel {
+    color: $orange;
+    text-decoration: none;
+    font-weight: bold;
+}
